@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="Calculatrice">
         <input type="text" id="Afficher" readonly>
         <div class="Buttons">
@@ -27,10 +26,23 @@
             <button onclick="Click('0')">0</button>
             <button onclick="Click('.')">.</button>
             <button onclick="Calculer()" class="operateur">=</button>
-            <button onclick="Effacer()" >C</button>
+            <button onclick="Effacer()">C</button>
+            <button onclick="toggleHistorique()" id="histBtn">H</button>
         </div>
     </div>
-
+    
+    <!-- Fenêtre popup pour l'historique -->
+    <div id="historiquePopup" class="historiquePopup">
+        <div class="historiqueContent">
+            <div class="historiqueHeader">
+                <span class="historiqueTitle">Historique</span>
+                <span class="fermer" onclick="toggleHistorique()">&times;</span>
+            </div>
+            <div id="historiqueList" class="historiqueList"></div>
+            <button id="clearHistorique" onclick="effacerHistorique()">Effacer l'historique</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
